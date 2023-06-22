@@ -8,7 +8,7 @@
 import Foundation
 import CocoaLumberjackSwift
 
-final class Logger {
+public final class Logger {
 
     // MARK: - Public properties
 

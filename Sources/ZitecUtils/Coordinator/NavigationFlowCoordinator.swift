@@ -7,25 +7,25 @@
 
 import UIKit
 
-class NavigationFlowCoordinator: NSObject, FlowCoordinator {
+public class NavigationFlowCoordinator: NSObject, FlowCoordinator {
     
-    fileprivate (set) var parentFlow: FlowCoordinator?
-    fileprivate (set) var flowPresentation: FlowCoordinatorPresentation
+    public var parentFlow: FlowCoordinator?
+    public var flowPresentation: FlowCoordinatorPresentation
     
     private (set) var navigationController: UINavigationController?
     
-    var mainViewController: UIViewController? {
+    public var mainViewController: UIViewController? {
         navigationController
     }
     
     // MARK: - Lifecycle
     
-    required init(parent: FlowCoordinator? = nil, presentation: FlowCoordinatorPresentation = .custom) {
+    public required init(parent: FlowCoordinator? = nil, presentation: FlowCoordinatorPresentation = .custom) {
         parentFlow = parent
         flowPresentation = presentation
     }
     
-    func initMainViewController() {
+    public func initMainViewController() {
         guard navigationController == nil else { return }
         
         // Starting flow from an existing flow
@@ -47,9 +47,9 @@ class NavigationFlowCoordinator: NSObject, FlowCoordinator {
         }
     }
     
-    func firstScreen() -> UIViewController { UIViewController() }
+    public func firstScreen() -> UIViewController { UIViewController() }
 
-    func finish(customDismiss: CustomPresentation?, completion: (() -> Void)? = nil) {
+    public func finish(customDismiss: CustomPresentation?, completion: (() -> Void)? = nil) {
         if let customDismiss = customDismiss {
             guard let mainViewController = mainViewController else {
                 assertionFailure("No main view controller")
@@ -68,17 +68,9 @@ class NavigationFlowCoordinator: NSObject, FlowCoordinator {
         }
         navigationController = nil
     }
-    
-    func pop() {
-        navigationController?.popViewController(animated: true)
-    }
-    
-    func popToRoot() {
-        navigationController?.popToRootViewController(animated: true)
-    }
 }
 
-extension NavigationFlowCoordinator {
+public extension NavigationFlowCoordinator {
     
     var navController: UINavigationController? {
         navigationController?.presentedViewController as? UINavigationController ?? navigationController

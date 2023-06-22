@@ -8,9 +8,9 @@
 import Foundation
 import Combine
 
-protocol CoordinatorRouter { }
+public protocol CoordinatorRouter { }
 
-final class CoordinatorBinding<T> {
+public final class CoordinatorBinding<T> {
     
     // MARK: - Private properties
     
@@ -19,11 +19,11 @@ final class CoordinatorBinding<T> {
     
     // MARK: - Lifecycle
     
-    func next(_ arg: T) {
+    public func next(_ arg: T) {
         subject.send(arg)
     }
     
-    func bind(_ action: @escaping (T) -> Void) {
+    public func bind(_ action: @escaping (T) -> Void) {
         subject.sink { input in
             action(input)
         }

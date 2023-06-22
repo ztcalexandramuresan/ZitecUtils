@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension URLSession {
+public extension URLSession {
     @available(iOS, deprecated: 15.0, message: "This extension is no longer necessary. Use API built into SDK")
     func asyncData(from request: URLRequest) async throws -> (Data, URLResponse) {
         try await withCheckedThrowingContinuation { continuation in
@@ -23,7 +23,7 @@ extension URLSession {
     }
 }
 
-extension Sequence {
+public extension Sequence {
     
     func asyncMap<T>(_ transform: (Element) async throws -> T) async rethrows -> [T] {
         var values = [T]()

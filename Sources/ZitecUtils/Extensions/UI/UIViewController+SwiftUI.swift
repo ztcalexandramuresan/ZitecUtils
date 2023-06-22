@@ -8,7 +8,7 @@
 import UIKit
 import SwiftUI
 
-extension UIViewController {
+public extension UIViewController {
     
     /// Adds a SwiftUI view as a child view controller handled by UIKit.
     func container<Content: View>(with swiftUI: Content) -> UIView {
@@ -40,7 +40,7 @@ extension UIViewController {
     }
 }
 
-extension UIView {
+public extension UIView {
     
     static func container<Content: View>(with swiftUI: Content) -> UIView {
         let hosting = UIHostingController(rootView: swiftUI)

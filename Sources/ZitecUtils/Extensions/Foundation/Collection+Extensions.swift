@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Collection {
+public extension Collection {
 
     /// Returns the element at the specified index iff it is within bounds, otherwise nil.
     subscript (safe index: Index) -> Element? {
@@ -15,7 +15,7 @@ extension Collection {
     }
 }
 
-extension Array {
+public extension Array {
     
     init(repeating: [Element], count: Int) {
         self.init([[Element]](repeating: repeating, count: count).flatMap { $0 })

@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol ConsoleLogging {
+public protocol ConsoleLogging {
     func log(_ request: URLRequest)
     func log(_ response: URLResponse, _ data: Data)
     func log(_ error: Error)
@@ -19,7 +19,7 @@ private extension Array where Element == String {
     }
 }
 
-extension ConsoleLogging {
+public extension ConsoleLogging {
 
     func log(_ request: URLRequest) {
         var array: [String] = []

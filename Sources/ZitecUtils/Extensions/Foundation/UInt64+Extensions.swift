@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension UInt64 {
+public extension UInt64 {
     
     static func toNanoseconds(from seconds: Double) -> UInt64 {
         UInt64(seconds * 1000000000)

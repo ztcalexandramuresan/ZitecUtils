@@ -7,22 +7,22 @@
 
 import SwiftUI
 
-struct TextStyle {
+public struct TextStyle {
     let font: Font
     let color: Color
 }
 
-struct StyleText: ViewModifier {
+public struct StyleText: ViewModifier {
     let textStyle: TextStyle
 
-    func body(content: Content) -> some View {
+    public func body(content: Content) -> some View {
         content
             .font(textStyle.font)
             .foregroundColor(textStyle.color)
     }
 }
 
-extension View {
+public extension View {
     func styleText(with textStyle: TextStyle) -> some View {
         modifier(StyleText(textStyle: textStyle))
     }

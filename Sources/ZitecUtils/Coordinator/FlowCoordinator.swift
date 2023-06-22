@@ -8,13 +8,13 @@
 import Foundation
 import UIKit
 
-enum FlowCoordinatorPresentation {
+public enum FlowCoordinatorPresentation {
     case present, push, custom
 }
 
-typealias CustomPresentation = ((_ mainViewController: UIViewController) -> Void)
+public typealias CustomPresentation = ((_ mainViewController: UIViewController) -> Void)
 
-protocol FlowCoordinator: AnyObject {
+public protocol FlowCoordinator: AnyObject {
     
     var mainViewController: UIViewController? { get }
     var flowPresentation: FlowCoordinatorPresentation { get }
@@ -31,7 +31,7 @@ protocol FlowCoordinator: AnyObject {
 
 // MARK: - Default implementation
 
-extension FlowCoordinator {
+public extension FlowCoordinator {
     
     func start(customPresentation: CustomPresentation? = nil) {
         initMainViewController()
@@ -45,7 +45,7 @@ extension FlowCoordinator {
 
 // MARK: - Starting a flow
 
-extension FlowCoordinator {
+public extension FlowCoordinator {
     
     fileprivate func start(flowPresentation: FlowCoordinatorPresentation,
                            customPresentation: CustomPresentation? = nil) {
@@ -87,7 +87,7 @@ extension FlowCoordinator {
 
 // MARK: - Finishing a flow
 
-extension FlowCoordinator {
+public extension FlowCoordinator {
     
     fileprivate func finish(flowPresentation: FlowCoordinatorPresentation,
                             customDismiss: CustomPresentation? = nil,

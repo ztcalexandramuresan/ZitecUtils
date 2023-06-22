@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension String {
+public extension String {
     init?(json: Data) {
         do {
             // JSON encoded.
@@ -23,7 +23,7 @@ extension String {
     }
 }
 
-extension Data {
+public extension Data {
     
     init?(stream: InputStream) {
         self.init()

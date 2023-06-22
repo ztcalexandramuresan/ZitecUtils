@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ConsoleOutput {
+public enum ConsoleOutput {
     case request(method: String, url: String)
     case response(code: Int, url: String)
     case headers([String: String])
@@ -15,7 +15,7 @@ enum ConsoleOutput {
     case failure(URLError)
 }
 
-extension ConsoleOutput {
+public extension ConsoleOutput {
     
     var value: String {
         switch self {
