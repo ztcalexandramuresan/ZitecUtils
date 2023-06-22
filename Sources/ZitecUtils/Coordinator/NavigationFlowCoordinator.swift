@@ -9,12 +9,12 @@ import UIKit
 
 open class NavigationFlowCoordinator: NSObject, FlowCoordinator {
     
-    public var parentFlow: FlowCoordinator?
-    public var flowPresentation: FlowCoordinatorPresentation
+    open var parentFlow: FlowCoordinator?
+    open var flowPresentation: FlowCoordinatorPresentation
     
     private (set) var navigationController: UINavigationController?
     
-    public var mainViewController: UIViewController? {
+    open var mainViewController: UIViewController? {
         navigationController
     }
     
@@ -25,7 +25,7 @@ open class NavigationFlowCoordinator: NSObject, FlowCoordinator {
         flowPresentation = presentation
     }
     
-    public func initMainViewController() {
+    open func initMainViewController() {
         guard navigationController == nil else { return }
         
         // Starting flow from an existing flow
@@ -47,9 +47,9 @@ open class NavigationFlowCoordinator: NSObject, FlowCoordinator {
         }
     }
     
-    public func firstScreen() -> UIViewController { UIViewController() }
+    open func firstScreen() -> UIViewController { UIViewController() }
 
-    public func finish(customDismiss: CustomPresentation?, completion: (() -> Void)? = nil) {
+    open func finish(customDismiss: CustomPresentation?, completion: (() -> Void)? = nil) {
         if let customDismiss = customDismiss {
             guard let mainViewController = mainViewController else {
                 assertionFailure("No main view controller")
