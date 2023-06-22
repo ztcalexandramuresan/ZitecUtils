@@ -27,10 +27,10 @@ let package = Package(
             dependencies: [
                 .product(name: "CocoaLumberjackSwift", package: "CocoaLumberjack")
             ],
-            path: "Sources/ZitecUtils"),
+            path: "ZitecUtils/Sources/ZitecUtils"),
         .testTarget(
             name: "ZitecUtilsTests",
             dependencies: ["ZitecUtils"],
-            path: "Tests/ZitecUtilsTests"),
+            path: "ZitecUtils/Tests/ZitecUtilsTests"),
     ]
 )
