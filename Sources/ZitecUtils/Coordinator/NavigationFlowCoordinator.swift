@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class NavigationFlowCoordinator: NSObject, FlowCoordinator {
+open class NavigationFlowCoordinator: NSObject, FlowCoordinator {
     
     public var parentFlow: FlowCoordinator?
     public var flowPresentation: FlowCoordinatorPresentation

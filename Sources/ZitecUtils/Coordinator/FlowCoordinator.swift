@@ -45,7 +45,7 @@ public extension FlowCoordinator {
 
 // MARK: - Starting a flow
 
-public extension FlowCoordinator {
+extension FlowCoordinator {
     
     fileprivate func start(flowPresentation: FlowCoordinatorPresentation,
                            customPresentation: CustomPresentation? = nil) {
@@ -87,7 +87,7 @@ public extension FlowCoordinator {
 
 // MARK: - Finishing a flow
 
-public extension FlowCoordinator {
+extension FlowCoordinator {
     
     fileprivate func finish(flowPresentation: FlowCoordinatorPresentation,
                             customDismiss: CustomPresentation? = nil,
