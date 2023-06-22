@@ -15,7 +15,7 @@ let package = Package(
             targets: ["ZitecUtils"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/CocoaLumberjack/CocoaLumberjack.git", from: "3.8.0")
+        .package(url: "https://github.com/CocoaLumberjack/CocoaLumberjack", from: "3.8.0")
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
     ],
