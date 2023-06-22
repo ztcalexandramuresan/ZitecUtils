@@ -15,7 +15,7 @@ let package = Package(
             targets: ["ZitecUtils"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/CocoaLumberjack/CocoaLumberjack", from: "3.8.0")
+        .package(url: "https://github.com/CocoaLumberjack/CocoaLumberjack", .upToNextMajor(from: "3.8.0"))
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
     ],
@@ -27,10 +27,10 @@ let package = Package(
             dependencies: [
                 .product(name: "CocoaLumberjackSwift", package: "CocoaLumberjack")
             ],
-            path: "ZitecUtils/Sources/ZitecUtils"),
+            path: "ZitecUtilsCore/Sources/ZitecUtils"),
         .testTarget(
             name: "ZitecUtilsTests",
             dependencies: ["ZitecUtils"],
-            path: "ZitecUtils/Tests/ZitecUtilsTests"),
+            path: "ZitecUtilsCore/Tests/ZitecUtilsTests"),
     ]
 )
